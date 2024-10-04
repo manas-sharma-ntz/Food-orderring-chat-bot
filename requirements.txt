@@ -26,4 +26,4 @@ SQLAlchemy
 typing_extensions
 tzdata
 Werkzeug
-wfastcgi
+waitress
