@@ -1,13 +1,18 @@
+import os
 from flask import Flask, Request, Response, json
 from flask_sqlalchemy import SQLAlchemy
 import pymysql
+from dotenv import load_dotenv
+
+load_dotenv()
+port = int(os.getenv('port', 12951))
 
 db = pymysql.connect(
-    host="localhost",  # or the IP address of the server where your database is hosted
-    port=3306,  # default MySQL port
-    user="root",  # MySQL username
-    password="root",  # MySQL password
-    database="pandeyji_eatery"  # The database name
+    host=os.getenv('host'), 
+    port=port,  
+    user=os.getenv('user'),  
+    password=os.getenv('password'), 
+    database=os.getenv('database')
 )
 
 cursor = db.cursor()
