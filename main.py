@@ -26,10 +26,6 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def defaulut_page():
-    return {"message":"Hello world"}
-
-@app.route('/')
 async def handle_request(request:Request):
     payload=await request.json()
     # Extract the necessary information
